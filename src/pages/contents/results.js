@@ -1,0 +1,191 @@
+const results = [
+    {//0
+        'type': 'HIDC',
+        'color': '#95D4E2',
+        'title': '그 누구도 나의 잠을<br/>방해하지는 못해요',//집순이 내형적 청결ㄴ 어린이',
+        'name': '안대',
+        'img': '../assets/result/pic_eyepatch.svg',
+        'description': '',
+        'prob': 3,
+        'best': 8,
+        'worst': 15
+    },
+    {//1
+        'type': 'HIDO',
+        'color': '#6C854B',
+        'title': '늘 총 16걸음을 걸으셨군요?<br/>침대 지박령',//'집순이 내향적 청결 ㄴ 부엉이',
+        'name': '베드테이블',
+        'img': '../assets/result/pic_bedtable.svg',
+        'description': '',
+        'prob': 3,
+        'best': 9,
+        'worst': 14
+    },
+    {//2
+        'type': 'HISC',
+        'color': '#55356F',
+        'title': '자취생의 로망! 모닝 커피<br/>내려 마시는 깔끔쟁이 브이로거',//'집순이 외향적 청결 어린이',
+        'name': '커피머신',
+        'img': '../assets/result/pic_coffee.svg',
+        'description': '',
+        'prob': 5,
+        'best': 10,
+        'worst': 6
+    },
+    {//3
+        'type': 'HISO',
+        'color': '#425994',
+        'title': '때론 밤의 달도 너무 밝아요.<br/>은은한 향기의',//'집순이 외향적 청결 부엉이',
+        'name': '캔들워머',
+        'img': '../assets/result/pic_candlewarmer.svg',
+        'description': '',
+        'prob': 5,
+        'best': 11,
+        'worst': 5
+    },
+    {//4
+        'type': 'HEDC',
+        'color': '#B567B2',
+        'title': '홈파티 주최는 제게 맡기세요!<br/>언제나 흥이 가득한',//'집순이 외향적 청결 ㄴ 어린이',
+        'name': '와인잔',
+        'img': '../assets/result/pic_wine.svg',
+        'description': '',
+        'prob': 3,
+        'best': 12,
+        'worst': 3
+    },
+    {//5
+        'type': 'HEDO',
+        'color': '#6DAAE2',
+        'title': '우리집 문턱을 넘는 순간<br/>그대는 나와 한 가족, 친화력 대마왕',//'집순이 외향적 청결 ㄴ 부엉이',
+        'name': '보드게임',
+        'img': '../assets/result/pic_game.svg',
+        'description': '',
+        'prob': 3,
+        'best': 13,
+        'worst': 2,
+    },
+    {//6
+        'type': 'HESC',
+        'color': '#AFCA84',
+        'title': '마음만은 밖으로!<br/>햇빛을 잔뜩 머금은 창가의',//'집순이 외향적 청결 ㄴ 부엉이',
+        'name': '베란다 화분',
+        'img': '../assets/result/pic_plant.svg',
+        'description': '',
+        'prob': 5,
+        'best': 14,
+        'worst': 1
+    },
+    {//7
+        'type': 'HESO',
+        'color': '#786CBE',
+        'title': 'SNS 업로드는 필수!<br/>홈파티의 주인공, 화려한',//'집순이 외향적 청결 ㄴ 부엉이',
+        'name': '파자마',
+        'img': '../assets/result/pic_pajamas.svg',
+        'description': '',
+        'prob': 5,
+        'best': 15,
+        'worst': 0
+    },
+    {//8
+        'type': 'WIDC',
+        'color': '#FFD465',
+        'title': '전자레인지만 있으면<br/>언제 어디서든 한끼 뚝딱!',//'집순이 외향적 청결 ㄴ 부엉이',
+        'name': '즉석밥',
+        'img': '../assets/result/pic_instantrice.svg',
+        'description': '',
+        'prob': 3,
+        'best': 0,
+        'worst': 15
+    },
+    {//9
+        'type': 'WIDO',
+        'color': '#F08383',
+        'title': 'SNS 업도르는 필수<br/>놀 땐 노는',//집순이 내향적 청결 ㄴ 부엉이',
+        'name': '블루투스 스피커',
+        'img': '../assets/result/pic_bluetooth.svg',
+        'description': '',
+        'prob': 3,
+        'best': 1,
+        'worst': 14
+
+    },
+    {//10
+        'type': 'WISC',
+        'color': '#424E8E',
+        'title': '다들 마음속에 슈퍼스타 하나쯤 품고 살잖아요?<br/>야간형 슈퍼스타',//집순이 내향적 청결 ㄴ 부엉이',
+        'name': '무드등',
+        'img': '../assets/result/pic_moodlight.svg',
+        'description': '',
+        'prob': 5,
+        'best': 2,
+        'worst': 13
+    },
+    {//11
+        'type': 'WISO',
+        'color': '#9FB2E3',
+        'title': '커피는 여기 담아주세요<br/>뽀득뽀득 깨끗하게 닦은',//집순이 내향적 청결 ㄴ 부엉이',
+        'name': '텀블러',
+        'img': '../assets/result/pic_tumbler.svg',
+        'description': '',
+        'prob': 5,
+        'best': 3,
+        'worst': 12
+    },
+    { //12
+        'type': 'WEDC',
+        'color': '#497945',
+        'title': '스위치 하나로 ON & OFF<br/>체력관리 끝판왕', //외박많이 외향적 청결ㄴ 새나라의 어린이',
+        'name': '멀티탭',
+        'img': '../assets/result/pic_multi.svg',
+        'description': '',
+        'prob': 3,
+        'best': 4,
+        'worst': 11,
+    },
+    {//13
+        'type': 'WEDO',
+        'color': '#B13B3B',
+        'title': '어디라고? 지금 나갈게 >_0<br/>휘뚜루마뚜루 언제든 준비된',//외박 많이 외향적 청결 ㄴ 올빼미',
+        'name': '과잠',
+        'img': '../assets/result/pic_gwajam.svg',
+        'description': '',
+        'prob': 3,
+        'best': 5,
+        'worst': 10
+    },
+    {//14
+        'type': 'WESC',
+        'color': '#99D6D6',
+        'title': '내가 가는 곳 어디든<br/>항균 99.9%',//집순이 내형적 청결ㄴ 어린이',
+        'name': '휴대용 손소독제',
+        'img': '../assets/result/pic_cleaner.svg',
+        'description': '',
+        'prob': 5,
+        'best': 6,
+        'worst': 9
+    },
+    {//15
+        'type': 'WESO',
+        'color': '#FEC0C0',
+        'title': '오늘도 외출하세요?<br/>잊지말고 꼭 챙기세요',//'집순이 외향적 청결 ㄴ 어린이',
+        'name': '보조배터리',
+        'img': '../assets/result/pic_battery.svg',
+        'description': '',
+        'prob': 5,
+        'best': 7,
+        'worst': 8
+    },
+    {//16
+        'type': 'OUT',
+        'color': '#1F1F1F',
+        'title': '아니 이런!\n더 이상 테스트를 진행할 수 없어요',//'집순이 외향적 청결 ㄴ 어린이',
+        'name': '다음 기회에',
+        'img': '../assets/result/pic_cry.svg',
+        'description': '',
+        'prob': 32,
+        'best': 7,
+        'worst': 8
+    }
+]
+export default results;
