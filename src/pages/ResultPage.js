@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Parser from 'html-react-parser';
+import CopyToClipboard from "react-copy-to-clipboard";
 import results from './contents/results';
 import KakaoShareBtn from '../components/Kakao';
-import img from '../assets/result/pic_wine.svg';
+import LinkCopyBtn from '../assets/btn/btn_link.svg';
+import ButtonComponent from '../components/SYBtnComponent';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
-    width:100vw;
+    width:100%;
     background-color:${props => props.backgroundColor};
 
     flex-direction:column;
@@ -33,17 +35,26 @@ const ResultTitle = styled.div`
     text-align:center;
     color:white;
     margin-top:1.9rem;
+    margin-bottom:15.4rem;
 `
 
 const ResultImg = styled.img`
     position:absolute;
     width:36.624rem;
+    //src:${props => props.imgLink};
+`
+
+const Content = styled.div`
+    position:absolute;
+    font-family:'Spoqa-Han-Sans';
+    font-size:1.2rem;
+    color:black;
 `
 
 const ResultSquare = styled.div`
     position:relative;
-    margin-top:17.6rem;
     display:flex;
+    margin:2.2rem;
 
     width:33.1rem;
     height:51.5rem;
@@ -55,6 +66,12 @@ const ResultSquare = styled.div`
         bottom:34rem;
         left:-1.6rem;
     }
+
+    ${Content}{
+        bottom:2.6rem;
+        margin-left:3.2rem;
+        margin-right:3.2rem;
+    }
 `
 
 const Title = styled.div`
@@ -62,31 +79,150 @@ const Title = styled.div`
     font-size:1.6rem;
     text-align:center;
     color:white;
-    margin-top:6.3rem;
+    margin-top:4.1rem;
+`
+
+const FlexLayout = styled.div`
+    display:flex;
+    justify-content:center;
+    margin-left:2.2rem;
+    margin-right:2.2rem;
+`
+
+const MatchElement = styled.div`
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+`
+
+const EmptyPlace = styled.div`
+    width:2rem;
 `
 
 const SubTitle = styled.div`
+    font-family:'Jalnan';
+    font-size:1.4rem;
+    text-align:center;
+    color:white;
+    margin-top:3.4rem;
+    margin-bottom:1.3rem;
 `
 
 const SmallSub = styled.div`
+    text-align:center;
+    font-family:'Spoqa-Han-Sans';
+    font-weight:400;
+    font-size:1.1rem;
+    color:black;
 `
 
 const SmallTitle = styled.div`
+    text-align:center;
+    font-family:'Jalnan';
+    font-weight:400;
+    font-size:1.8rem;
+    color:black;
+`
+
+const MatchImg = styled.div`
+    background-image:url(${props => props.src});
+`
+
+const MatchSqaure = styled.div`
+    position:relative;
+    width:100%;
+    height:22.9rem;
+    background-color:white;
+    border-radius: 0.5rem;
+
+    ${SmallSub}{
+        margin-top:2.6rem;
+    }
+
+    ${SmallTitle}{
+        margin-top:1.3rem;
+    }
+
+    ${MatchImg}{
+        margin-top:0.6rem;
+    }
+
+`
+
+const ShareSquare = styled.div`
+    width:100%;
+    height:20.8rem;
+    background-color:white;
+    border-radius: 0.5rem;
+    margin-top:1.7rem;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+`
+
+const DeveloperPageLink = styled.div`
+    color: '#1F1F1F';
+    text-align:center;
+    font-family:'Spoqa-Han-Sans';
+    font-weight:400;
+    font-size:1.2rem;
+    margin-top:6.3rem;
 `
 
 function ResultPage({ isShow, finalType }) {
+
+    const link = window.location.href;
 
     return (
         <Wrapper isShow={isShow} backgroundColor={results[finalType].color}>
             <Container>
                 <ResultSub>{Parser(results[finalType].title)}</ResultSub>
                 <ResultTitle>{results[finalType].name}</ResultTitle>
-                <ResultSquare><ResultImg src={img}></ResultImg></ResultSquare>
+                <ResultSquare>
+                    <ResultImg imgLink={results[finalType].img} />
+                    <Content>{Parser(results[finalType].description)}</Content>
+                </ResultSquare>
+
+                <Title>🏠 혹시, 룸메이트를 찾고 있나요?</Title>
+                <FlexLayout>
+                    <MatchElement>
+                        <SubTitle>잘 맞고 좋네요~</SubTitle>
+                        <MatchSqaure>
+                            <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
+                            <SmallTitle>{results[results[finalType].best].name}</SmallTitle>'
+                            <MatchImg src={results[results[finalType].best].img} />
+                        </MatchSqaure>
+                    </MatchElement>
+                    <EmptyPlace />
+                    <MatchElement>
+                        <SubTitle>췌h악잇^^엡욧</SubTitle>
+                        <MatchSqaure>
+                            <SmallSub>{Parser(results[results[finalType].worst].title)}</SmallSub>
+                            <SmallTitle>{results[results[finalType].worst].name}</SmallTitle>
+                            <MatchImg src={results[results[finalType].worst].img} />
+                        </MatchSqaure>
+                    </MatchElement>
+                </FlexLayout>
+
+                <Title>👍 친구에게 결과 공유하기</Title>
+                <FlexLayout>
+                    <ShareSquare>
+                        <FlexLayout>
+                            <KakaoShareBtn _title={results[finalType].result} _desc={results[finalType].desc} _imageUrl={results[finalType].img} />
+                            <img src={LinkCopyBtn} />
+                        </FlexLayout>
+                        <ButtonComponent type={true} text={'테스트 다시 하기'} />
+                        <ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} />
+                    </ShareSquare>
+                </FlexLayout>
+
+                <DeveloperPageLink>집 주인은 어떤 사람인지 궁금하다면? 클릭!</DeveloperPageLink>
             </Container>
         </Wrapper>
     );
 }
-
-//<KakaoShareBtn _title={results[finalType].result} _desc={results[finalType].desc} _imageUrl={results[finalType].img} />
 
 export default ResultPage;

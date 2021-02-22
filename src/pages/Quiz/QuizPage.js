@@ -1,8 +1,8 @@
 import React, { useEffect, useState, setState } from 'react';
 import styled from 'styled-components';
-import ResultPage from './ResultPage';
-import ButtonComponent from '../components/ButtonComponent';
-import contents from './contents/questions';
+import ResultPage from '../ResultPage';
+import ButtonComponent from '../../components/ButtonComponent';
+import contents from '../contents/questions';
 import ProgressBar from './ProgressBar.js';
 import Parser from 'html-react-parser';
 

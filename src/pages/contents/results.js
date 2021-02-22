@@ -113,7 +113,7 @@ const results = [
     {//10
         'type': 'WISC',
         'color': '#424E8E',
-        'title': '다들 마음속에 슈퍼스타 하나쯤 품고 살잖아요?<br/>야간형 슈퍼스타',//집순이 내향적 청결 ㄴ 부엉이',
+        'title': '마음에 잔잔한 흥을 품고 살아요<br/>야간형 내적 슈퍼스타',//집순이 내향적 청결 ㄴ 부엉이',
         'name': '무드등',
         'img': '../assets/result/pic_moodlight.svg',
         'description': '',
