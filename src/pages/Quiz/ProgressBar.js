@@ -1,4 +1,4 @@
-import ewhasymbol from '../assets/ewhasymbol.png';
+import ewhasymbol from '../../assets/ewhasymbol.png';
 
 const ProgressBar = (props) => {
   const { completed } = props;

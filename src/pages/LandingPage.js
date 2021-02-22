@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ButtonComponent from '../components/ButtonComponent';
-import QuizPage from './QuizPage';
+import QuizPage from './Quiz/QuizPage';
 import ResultPage from './ResultPage';
 
 const Container = styled.div`

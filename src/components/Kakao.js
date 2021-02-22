@@ -9,6 +9,10 @@ const ShareBtn = styled.button`
   outline: none;
   background: none;
   border: none;
+
+  margin-right:1.6rem;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
 `;
 
 function KaKao({ _title, _desc, _imageUrl }) {
