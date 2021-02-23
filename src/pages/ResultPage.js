@@ -6,6 +6,7 @@ import results from './contents/results';
 import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
 import ButtonComponent from '../components/SYBtnComponent';
+import cry from '../assets/result/pic_cry.svg';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
@@ -40,7 +41,7 @@ const ResultTitle = styled.div`
 
 const ResultImg = styled.img`
     position:absolute;
-    width:36.624rem;
+    width:${props => props.isNormal < 16 ? '36.624rem' : '6rem'};
     //src:${props => props.imgLink};
 `
 
@@ -56,15 +57,16 @@ const ResultSquare = styled.div`
     display:flex;
     margin:2.2rem;
 
-    width:33.1rem;
-    height:51.5rem;
+    width: 33.1rem;
+    height:${props => props.isNormal < 16 ? '51.5rem' : '22.9rem'};
     background-color:white;
     border-radius: 0.5rem;
 
     ${ResultImg}{
         justify-content:center;
-        bottom:34rem;
-        left:-1.6rem;
+        bottom:${props => props.isNormal < 16 ? '34rem' : ''};
+        top:${props => props.isNormal < 16 ? '' : '-11rem'};
+        left:${props => props.isNormal < 16 ? '-1.6rem' : '13rem'};
     }
 
     ${Content}{
@@ -72,6 +74,10 @@ const ResultSquare = styled.div`
         margin-left:3.2rem;
         margin-right:3.2rem;
     }
+`
+
+const NormalResult = styled.div`
+    display : ${props => props.isNormal < 16 ? 'show' : 'none'};
 `
 
 const Title = styled.div`
@@ -191,31 +197,33 @@ function ResultPage({ isShow, finalType }) {
             <Container>
                 <ResultSub>{Parser(results[finalType].title)}</ResultSub>
                 <ResultTitle>{results[finalType].name}</ResultTitle>
-                <ResultSquare>
-                    <ResultImg imgLink={results[finalType].img} />
+                <ResultSquare isNormal={finalType}>
+                    <ResultImg isNormal={finalType} src={cry} />
                     <Content>{Parser(results[finalType].description)}</Content>
                 </ResultSquare>
 
-                <Title>🏠 혹시, 룸메이트를 찾고 있나요?</Title>
-                <FlexLayout>
-                    <MatchElement>
-                        <SubTitle>잘 맞고 좋네요~</SubTitle>
-                        <MatchSqaure>
-                            <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
-                            <SmallTitle>{results[results[finalType].best].name}</SmallTitle>'
+                <NormalResult isNormal={finalType}>
+                    <Title>🏠 혹시, 룸메이트를 찾고 있나요?</Title>
+                    <FlexLayout>
+                        <MatchElement>
+                            <SubTitle>잘 맞고 좋네요~</SubTitle>
+                            <MatchSqaure>
+                                <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
+                                <SmallTitle>{results[results[finalType].best].name}</SmallTitle>'
                             <MatchImg src={results[results[finalType].best].img} />
-                        </MatchSqaure>
-                    </MatchElement>
-                    <EmptyPlace />
-                    <MatchElement>
-                        <SubTitle>췌h악잇^^엡욧</SubTitle>
-                        <MatchSqaure>
-                            <SmallSub>{Parser(results[results[finalType].worst].title)}</SmallSub>
-                            <SmallTitle>{results[results[finalType].worst].name}</SmallTitle>
-                            <MatchImg src={results[results[finalType].worst].img} />
-                        </MatchSqaure>
-                    </MatchElement>
-                </FlexLayout>
+                            </MatchSqaure>
+                        </MatchElement>
+                        <EmptyPlace />
+                        <MatchElement>
+                            <SubTitle>췌h악잇^^엡욧</SubTitle>
+                            <MatchSqaure>
+                                <SmallSub>{Parser(results[results[finalType].worst].title)}</SmallSub>
+                                <SmallTitle>{results[results[finalType].worst].name}</SmallTitle>
+                                <MatchImg src={results[results[finalType].worst].img} />
+                            </MatchSqaure>
+                        </MatchElement>
+                    </FlexLayout>
+                </NormalResult>
 
                 <Title>👍 친구에게 결과 공유하기</Title>
                 <FlexLayout>
