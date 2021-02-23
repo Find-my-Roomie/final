@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import kakao from '../assets/btn/btn_kakao.svg';
 
@@ -27,15 +27,12 @@ function KaKao({ _title, _sub, _imageUrl }) {
                 title: replaced_sub + ', ' + _title,
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
                 imageUrl: _imageUrl,
-                link: {
-                    mobileWebUrl: '나중에 링크 넣기',
-                }
             },
             buttons: [
                 {
                     title: '나도 테스트하러 가기',
                     link: {
-                        mobileWebUrl: '나중에 링크 넣기',
+                        WebUrl: 'http://localhost:3000/',
                     }
                 }
             ]

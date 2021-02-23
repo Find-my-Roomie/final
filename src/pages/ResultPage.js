@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Parser from 'html-react-parser';
@@ -10,7 +10,7 @@ import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
 
 const Wrapper = styled.div`
-    display: ${props => props.isShow === true ? 'flex' : 'none'};
+    display: flex;
     width:100%;
     background-color:${props => props.backgroundColor};
 
@@ -42,8 +42,7 @@ const ResultTitle = styled.div`
 
 const ResultImg = styled.img`
     position:absolute;
-    width:${props => props.isNormal < 16 ? '36.624rem' : '6rem'};
-    //src:${props => props.imgLink};
+    width: 36.624rem;
 `
 
 const Content = styled.div`
@@ -65,9 +64,8 @@ const ResultSquare = styled.div`
 
     ${ResultImg}{
         justify-content:center;
-        bottom:${props => props.isNormal < 16 ? '34rem' : ''};
-        top:${props => props.isNormal < 16 ? '' : '-11rem'};
-        left:${props => props.isNormal < 16 ? '-1.6rem' : '13rem'};
+        bottom:${props => props.isNormal < 16 ? '34rem' : '14rem'};
+        left: -1.6rem;
     }
 
     ${Content}{
@@ -143,6 +141,7 @@ const MatchSqaure = styled.div`
     height:22.9rem;
     background-color:white;
     border-radius: 0.5rem;
+    text-align:center;
 
     ${SmallSub}{
         margin-top:1.4rem;
@@ -191,64 +190,73 @@ const BtnToPage = styled(NavLink)`
     color:${props => props.theme.dark};
 `
 
-function ResultPage({ isShow, finalType }) {
-
+function ResultPage({ match }) {
     const link = window.location.href;
+    const finalType = match.params.finalType;
+
     const alertMessage = () => {
-        alert("링크가 복사되었어요!");
+        alert("내 룸미 결과가 클립보드에 담겼어요!");
     }
 
-    return (
-        <Wrapper isShow={isShow} backgroundColor={results[finalType].color}>
-            <Container>
-                <ResultSub>{Parser(results[finalType].title)}</ResultSub>
-                <ResultTitle>{results[finalType].name}</ResultTitle>
-                <ResultSquare isNormal={finalType}>
-                    <ResultImg isNormal={finalType} src={results[finalType].img} />
-                    <Content>{Parser(results[finalType].description)}</Content>
-                </ResultSquare>
+    if (finalType <= 16 && finalType >= 0) {
+        return (
+            <Wrapper backgroundColor={results[finalType].color}>
+                <Container>
+                    <ResultSub>{Parser(results[finalType].title)}</ResultSub>
+                    <ResultTitle>{results[finalType].name}</ResultTitle>
+                    <ResultSquare isNormal={finalType}>
+                        <ResultImg isNormal={finalType} src={results[finalType].img} />
+                        <Content>{Parser(results[finalType].description)}</Content>
+                    </ResultSquare>
 
-                <NormalResult isNormal={finalType}>
-                    <Title>🏠 혹시, 룸메이트를 찾고 있나요?</Title>
-                    <FlexLayout>
-                        <MatchElement>
-                            <SubTitle>잘 맞고 좋네요~</SubTitle>
-                            <MatchSqaure>
-                                <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
-                                <SmallTitle>{results[results[finalType].best].name}</SmallTitle>'
-                            <MatchImg src={results[results[finalType].best].img} />
-                            </MatchSqaure>
-                        </MatchElement>
-                        <EmptyPlace />
-                        <MatchElement>
-                            <SubTitle>췌h악잇^^엡욧</SubTitle>
-                            <MatchSqaure>
-                                <SmallSub>{Parser(results[results[finalType].worst].title)}</SmallSub>
-                                <SmallTitle>{results[results[finalType].worst].name}</SmallTitle>
-                                <MatchImg src={results[results[finalType].worst].img} />
-                            </MatchSqaure>
-                        </MatchElement>
-                    </FlexLayout>
-                </NormalResult>
-
-                <Title>👍 친구에게 결과 공유하기</Title>
-                <FlexLayout>
-                    <ShareSquare>
+                    <NormalResult isNormal={finalType}>
+                        <Title>🏠 혹시, 룸메이트를 찾고 있나요?</Title>
                         <FlexLayout>
-                            <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} />
-                            <CopyToClipboard text={link}>
-                                <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
-                            </CopyToClipboard>
+                            <MatchElement>
+                                <SubTitle>잘 맞고 좋네요~</SubTitle>
+                                <MatchSqaure>
+                                    <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
+                                    <SmallTitle>{results[results[finalType].best].name}</SmallTitle>
+                                    <MatchImg src={results[results[finalType].best].img} />
+                                </MatchSqaure>
+                            </MatchElement>
+                            <EmptyPlace />
+                            <MatchElement>
+                                <SubTitle>췌h악잇^^엡욧</SubTitle>
+                                <MatchSqaure>
+                                    <SmallSub>{Parser(results[results[finalType].worst].title)}</SmallSub>
+                                    <SmallTitle>{results[results[finalType].worst].name}</SmallTitle>
+                                    <MatchImg src={results[results[finalType].worst].img} />
+                                </MatchSqaure>
+                            </MatchElement>
                         </FlexLayout>
-                        <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
-                        <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
-                    </ShareSquare>
-                </FlexLayout>
+                    </NormalResult>
 
-                <BtnToPage exact to='/makers'><DeveloperPageLink>집 주인은 어떤 사람인지 궁금하다면? 클릭!</DeveloperPageLink></BtnToPage>
-            </Container>
-        </Wrapper>
-    );
+                    <Title>👍 친구에게 결과 공유하기</Title>
+                    <FlexLayout>
+                        <ShareSquare>
+                            <FlexLayout>
+                                <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} />
+                                <CopyToClipboard text={link}>
+                                    <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
+                                </CopyToClipboard>
+                            </FlexLayout>
+                            <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
+                            <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
+                        </ShareSquare>
+                    </FlexLayout>
+
+                    <BtnToPage exact to='/makers'><DeveloperPageLink>집 주인은 어떤 사람인지 궁금하다면? 클릭!</DeveloperPageLink></BtnToPage>
+                </Container>
+            </Wrapper>
+        );
+    } else {
+        return (
+            <>
+                앗! 이 주소는 룸미가 살지 않는 방이에요!
+            </>
+        );
+    }
 }
 
 export default ResultPage;
