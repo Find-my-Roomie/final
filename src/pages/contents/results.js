@@ -13,7 +13,7 @@ const results = [
     {//1
         'type': 'HIDO',
         'color': '#6C854B',
-        'title': '늘 총 16걸음을 걸으셨군요?<br/>침대 지박령',//'집순이 내향적 청결 ㄴ 부엉이',
+        'title': '오늘 총 16걸음을 걸으셨군요?<br/>침대 지박령',//'집순이 내향적 청결 ㄴ 부엉이',
         'name': '베드테이블',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_bedtable.png',
         'description': '',
@@ -101,7 +101,7 @@ const results = [
     {//9
         'type': 'WIDO',
         'color': '#F08383',
-        'title': 'SNS 업도르는 필수<br/>놀 땐 노는',//집순이 내향적 청결 ㄴ 부엉이',
+        'title': 'SNS 업로드는 필수<br/>놀 땐 노는',//집순이 내향적 청결 ㄴ 부엉이',
         'name': '블루투스 스피커',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_bluetooth.png',
         'description': '',
