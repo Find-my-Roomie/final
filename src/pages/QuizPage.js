@@ -121,7 +121,6 @@ function QuizPage({ isShow }) {
     } else if (questionNum < 10) {
         return (
             <>
-
                 <Container isShow={isShow}>
                     <Box isShow={isShow}>
                         <ProgressBar completed={(questionNum + 1) * 10} rotation={turn} />
