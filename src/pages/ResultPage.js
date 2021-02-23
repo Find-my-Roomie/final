@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Parser from 'html-react-parser';
 import CopyToClipboard from "react-copy-to-clipboard";
+
 import results from './contents/results';
+import ButtonComponent from '../components/SYBtnComponent';
 import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
-import ButtonComponent from '../components/SYBtnComponent';
-import cry from '../assets/result/pic_cry.svg';
+
+//이미지 처리를 어떻게 해야될까?
+import cry from '../assets/result/pic_wine.svg';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
@@ -185,6 +189,11 @@ const DeveloperPageLink = styled.div`
     margin-top:6.3rem;
 `
 
+const BtnToPage = styled(NavLink)`
+    text-decoration: none;
+    color:${props => props.theme.dark};
+`
+
 function ResultPage({ isShow, finalType }) {
 
     const link = window.location.href;
@@ -234,12 +243,12 @@ function ResultPage({ isShow, finalType }) {
                                 <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
                             </CopyToClipboard>
                         </FlexLayout>
-                        <ButtonComponent type={true} text={'테스트 다시 하기'} />
-                        <ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} />
+                        <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
+                        <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
                     </ShareSquare>
                 </FlexLayout>
 
-                <DeveloperPageLink>집 주인은 어떤 사람인지 궁금하다면? 클릭!</DeveloperPageLink>
+                <BtnToPage exact to='/makers'><DeveloperPageLink>집 주인은 어떤 사람인지 궁금하다면? 클릭!</DeveloperPageLink></BtnToPage>
             </Container>
         </Wrapper>
     );
