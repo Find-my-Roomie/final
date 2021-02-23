@@ -42,8 +42,7 @@ const ResultTitle = styled.div`
 
 const ResultImg = styled.img`
     position:absolute;
-    width:${props => props.isNormal < 16 ? '36.624rem' : '6rem'};
-    //src:${props => props.imgLink};
+    width: 36.624rem;
 `
 
 const Content = styled.div`
@@ -65,9 +64,8 @@ const ResultSquare = styled.div`
 
     ${ResultImg}{
         justify-content:center;
-        bottom:${props => props.isNormal < 16 ? '34rem' : ''};
-        top:${props => props.isNormal < 16 ? '' : '-11rem'};
-        left:${props => props.isNormal < 16 ? '-1.6rem' : '13rem'};
+        bottom:${props => props.isNormal < 16 ? '34rem' : '14rem'};
+        left: -1.6rem;
     }
 
     ${Content}{
