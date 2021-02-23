@@ -9,9 +9,6 @@ import ButtonComponent from '../components/SYBtnComponent';
 import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
 
-//이미지 처리를 어떻게 해야될까?
-import cry from '../assets/result/pic_wine.svg';
-
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
     width:100%;
@@ -136,8 +133,8 @@ const SmallTitle = styled.div`
     color:black;
 `
 
-const MatchImg = styled.div`
-    background-image:url(${props => props.src});
+const MatchImg = styled.img`
+    width:15.8rem;
 `
 
 const MatchSqaure = styled.div`
@@ -148,7 +145,7 @@ const MatchSqaure = styled.div`
     border-radius: 0.5rem;
 
     ${SmallSub}{
-        margin-top:2.6rem;
+        margin-top:1.4rem;
     }
 
     ${SmallTitle}{
@@ -207,7 +204,7 @@ function ResultPage({ isShow, finalType }) {
                 <ResultSub>{Parser(results[finalType].title)}</ResultSub>
                 <ResultTitle>{results[finalType].name}</ResultTitle>
                 <ResultSquare isNormal={finalType}>
-                    <ResultImg isNormal={finalType} src={cry} />
+                    <ResultImg isNormal={finalType} src={results[finalType].img} />
                     <Content>{Parser(results[finalType].description)}</Content>
                 </ResultSquare>
 
@@ -238,7 +235,7 @@ function ResultPage({ isShow, finalType }) {
                 <FlexLayout>
                     <ShareSquare>
                         <FlexLayout>
-                            <KakaoShareBtn _title={results[finalType].name} _desc={results[finalType].description} _imageUrl={results[finalType].img} />
+                            <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} />
                             <CopyToClipboard text={link}>
                                 <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
                             </CopyToClipboard>
