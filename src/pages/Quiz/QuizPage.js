@@ -21,21 +21,20 @@ const Container = styled.div`
  
 `
 const Box = styled.div`
-
-display: ${props => props.isShow === true ? 'flex' : 'none'};
-margin-top:2rem;
-margin-bottom:2rem;
-height:600px;
-background-color: white;
-border-radius: 2rem;
-width: 400px;
-margin:0 auto;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-border: 4px double #FF9999;
-text-align:center;
-padding:10px;
+    display: ${props => props.isShow === true ? 'flex' : 'none'};
+    margin-top:2rem;
+    margin-bottom:2rem;
+    height:600px;
+    background-color: white;
+    border-radius: 2rem;
+    width: 400px;
+    margin:0 auto;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border: 4px double #FF9999;
+    text-align:center;
+    padding:10px;
 `
 
 const Text = styled.div`
@@ -43,9 +42,7 @@ const Text = styled.div`
     font-weight:700;
     font-size:2rem;
     margin-bottom: 6.5rem;
-    align-items:center;
-
-    
+    align-items:center;    
 `
 
 function QuizPage({ isShow }) {
