@@ -163,6 +163,13 @@ const ShareSquare = styled.div`
     align-items:center;
 `
 
+const Button = styled.button`
+    border: none;
+    outline:none;
+    background-color:white;
+    cursor:pointer;
+`
+
 const DeveloperPageLink = styled.div`
     color: '#1F1F1F';
     text-align:center;
@@ -175,6 +182,9 @@ const DeveloperPageLink = styled.div`
 function ResultPage({ isShow, finalType }) {
 
     const link = window.location.href;
+    const alertMessage = () => {
+        alert("링크가 복사되었어요!");
+    }
 
     return (
         <Wrapper isShow={isShow} backgroundColor={results[finalType].color}>
@@ -211,8 +221,10 @@ function ResultPage({ isShow, finalType }) {
                 <FlexLayout>
                     <ShareSquare>
                         <FlexLayout>
-                            <KakaoShareBtn _title={results[finalType].result} _desc={results[finalType].desc} _imageUrl={results[finalType].img} />
-                            <img src={LinkCopyBtn} />
+                            <KakaoShareBtn _title={results[finalType].name} _desc={results[finalType].description} _imageUrl={results[finalType].img} />
+                            <CopyToClipboard text={link}>
+                                <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
+                            </CopyToClipboard>
                         </FlexLayout>
                         <ButtonComponent type={true} text={'테스트 다시 하기'} />
                         <ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} />
