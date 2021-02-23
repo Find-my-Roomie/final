@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ButtonComponent from '../components/ButtonComponent';
-import QuizPage from './Quiz/QuizPage';
-import ResultPage from './ResultPage';
+import QuizPage from './QuizPage';
 
 const Container = styled.div`
 &,
@@ -46,9 +45,6 @@ function LandingPage() {
     const [isShow, setIsShow] = useState(true);
     const [isQuizShow, setIsQuizShow] = useState(false);
 
-
-    //테스트 시작 버튼 클릭
-
     const onClickStartBtn = () => {
         setIsShow(false);
         setIsQuizShow(true);
@@ -63,7 +59,6 @@ function LandingPage() {
                 </Box>
             </Container>
             <QuizPage isShow={isQuizShow} />
-
         </>
     );
 }

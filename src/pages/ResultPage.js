@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Parser from 'html-react-parser';
@@ -10,7 +10,7 @@ import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
 
 const Wrapper = styled.div`
-    display: ${props => props.isShow === true ? 'flex' : 'none'};
+    display: flex;
     width:100%;
     background-color:${props => props.backgroundColor};
 
@@ -141,6 +141,7 @@ const MatchSqaure = styled.div`
     height:22.9rem;
     background-color:white;
     border-radius: 0.5rem;
+    text-align:center;
 
     ${SmallSub}{
         margin-top:1.4rem;
@@ -189,15 +190,16 @@ const BtnToPage = styled(NavLink)`
     color:${props => props.theme.dark};
 `
 
-function ResultPage({ isShow, finalType }) {
-
+function ResultPage({ match }) {
     const link = window.location.href;
+    const finalType = match.params.finalType;
+
     const alertMessage = () => {
-        alert("링크가 복사되었어요!");
+        alert("내 룸미 결과가 클립보드에 담겼어요!");
     }
 
     return (
-        <Wrapper isShow={isShow} backgroundColor={results[finalType].color}>
+        <Wrapper backgroundColor={results[finalType].color}>
             <Container>
                 <ResultSub>{Parser(results[finalType].title)}</ResultSub>
                 <ResultTitle>{results[finalType].name}</ResultTitle>
@@ -213,8 +215,8 @@ function ResultPage({ isShow, finalType }) {
                             <SubTitle>잘 맞고 좋네요~</SubTitle>
                             <MatchSqaure>
                                 <SmallSub>{Parser(results[results[finalType].best].title)}</SmallSub>
-                                <SmallTitle>{results[results[finalType].best].name}</SmallTitle>'
-                            <MatchImg src={results[results[finalType].best].img} />
+                                <SmallTitle>{results[results[finalType].best].name}</SmallTitle>
+                                <MatchImg src={results[results[finalType].best].img} />
                             </MatchSqaure>
                         </MatchElement>
                         <EmptyPlace />

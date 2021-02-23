@@ -1,9 +1,8 @@
 import React, { useEffect, useState, setState } from 'react';
 import styled from 'styled-components';
-import ResultPage from '../ResultPage';
-import ButtonComponent from '../../components/ButtonComponent';
-import contents from '../contents/questions';
-import ProgressBar from './ProgressBar.js';
+import ButtonComponent from '../components/ButtonComponent';
+import contents from './contents/questions';
+import ProgressBar from '../components/ProgressBar';
 import Parser from 'html-react-parser';
 
 const Container = styled.div`
@@ -99,7 +98,6 @@ function QuizPage({ isShow }) {
             result = result + 8
         }
         setFinalType(result);
-
     };
 
     const onClickResultBtn = () => {
@@ -140,8 +138,6 @@ function QuizPage({ isShow }) {
                 </Container>
             </>
         );
-    } else {
-        return (<ResultPage isShow={isResultShow} finalType={finalType} />);
     }
 }
 
