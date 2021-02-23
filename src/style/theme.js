@@ -8,6 +8,7 @@ const theme = {
     primary: '#00462A',
     darkGray: '#A7A7A7',
     gray: '#E5E5E5',
+    dark: '#1F1F1F',
 
     // break point
     mobile: `(max-width: ${size.mobile})`,
