@@ -15,24 +15,33 @@ const ShareBtn = styled.button`
   margin-bottom: 1.6rem;
 `;
 
-function KaKao({ _title, _sub, _imageUrl }) {
+function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     let replaced_sub = _sub.replace('<br/>', ' ')
 
     const onHandleShareKaKao = () => {
-        console.log(_imageUrl)
+
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
                 title: replaced_sub + ', ' + _title,
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
                 imageUrl: _imageUrl,
+                link: {
+                    mobileWebUrl: 'http://localhost:3000/',
+                }
             },
             buttons: [
                 {
-                    title: '나도 테스트하러 가기',
+                    title: '결과 보기',
                     link: {
-                        WebUrl: 'http://localhost:3000/',
+                        mobileWebUrl: 'http://localhost:3000/result/' + _finalType,
+                    }
+                },
+                {
+                    title: '테스트하기',
+                    link: {
+                        mobileWebUrl: 'http://localhost:3000/',
                     }
                 }
             ]
