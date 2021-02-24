@@ -82,7 +82,7 @@ function AllResultPage() {
                     />
                 ))}
                 <Text bottom='74px' />
-                <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
+                <BtnToPage exact to='/'><ButtonComponent type={'others-activated'} text={'테스트 다시 하기'} /></BtnToPage>
                 <BtnToPage exact to='/makers'><DeveloperPageLink><SmallText>집 주인은 어떤 사람인지 궁금하다면? 클릭!</SmallText></DeveloperPageLink></BtnToPage>
             </Wrapper>
         </>

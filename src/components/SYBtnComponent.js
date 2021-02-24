@@ -1,11 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-//type에 따라서 초록 버튼인지 회색 테두리 버튼인지 결정하게 수정하면 편함
-
 const Button = styled.div`
-    width: ${props => props.type === true ? '28.8rem' : '28.2rem'};
-    height: ${props => props.type === true ? '4.6rem' : '4rem'};
+    width: ${props =>
+        props.type === 'result-activated' ? '28.8rem'
+            : props.type === 'result-unactivated' ? '28.2rem'
+                : props.type === 'others-activated' ? '32.7rem'
+                    : '32.7rem'
+    };
+    
+    height: ${props =>
+        props.type === 'result-activated' ? '4.6rem'
+            : props.type === 'others-activated' ? '4.6rem'
+                : '4rem'
+    };
     border-radius: 0.5rem;
 
     cursor:pointer;
@@ -20,19 +28,24 @@ const Button = styled.div`
 
     margin-bottom:1.2rem;
 
-    background-color: ${props => props.type === true ? '#00462A' : 'white'};
-    color: ${props => props.type === true ? 'white' : 'black'};
-    border:${props => props.type === true ? 'none' : '0.3rem solid #E5E5E5'};
+    background-color: ${props =>
+        props.type === 'result-activated' ? '#00462A'
+            : props.type === 'others-activated' ? '#00462A'
+                : 'white'};
+    color: ${props =>
+        props.type === 'result-activated' ? 'white'
+            : props.type === 'others-activated' ? 'white'
+                : 'black'};
+    border:${props =>
+        props.type === 'result-activated' ? 'none'
+            : props.type === 'others-activated' ? 'none'
+                : '0.3rem solid #E5E5E5'};
 `
 
 function SYBtnComponent({ type, text }) {
 
-    const onClickBtn = () => {
-        //테스트 다시하기 or 모든 결과 보기
-    }
-
     return (
-        <Button type={type} onClick={onClickBtn}>{text}</Button>
+        <Button type={type}>{text}</Button>
     );
 
 }

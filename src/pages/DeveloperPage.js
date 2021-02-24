@@ -70,8 +70,8 @@ function DeveloperPage() {
                 <Text top='27.4rem' fontSize='1.2rem'>Special thanks to...</Text>
                 <Text top='4.2rem' color='#00462A'>DCDMJY</Text>
                 <Text top='1.7rem' bottom='19.4rem' font='Spoqa-Han-Sans' fontWeight='400' fontSize='1.2rem'>기깔나는 그림 및 기똥찬 유형 이름 구상에 기여함</Text>
-                <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
-                <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
+                <BtnToPage exact to='/'><ButtonComponent type={'others-activated'} text={'테스트 다시 하기'} /></BtnToPage>
+                <BtnToPage exact to='/all'><ButtonComponent type={'others-unactivated'} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
             </Wrapper>
         </>
     );
