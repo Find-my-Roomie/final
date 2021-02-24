@@ -24,7 +24,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: replaced_sub + ', ' + _title,
+                title: replaced_sub + ', \'' + _title + '\'',
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
                 imageUrl: _imageUrl,
                 link: {

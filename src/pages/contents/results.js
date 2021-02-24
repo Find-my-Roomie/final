@@ -6,6 +6,7 @@ const results = [
         'name': '안대',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_eyepatch.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 8,
         'worst': 15
@@ -17,6 +18,7 @@ const results = [
         'name': '베드테이블',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_bedtable.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 9,
         'worst': 14
@@ -28,6 +30,7 @@ const results = [
         'name': '커피머신',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_coffee.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 10,
         'worst': 6
@@ -39,6 +42,7 @@ const results = [
         'name': '캔들워머',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_candlewarmer.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 11,
         'worst': 5
@@ -50,6 +54,7 @@ const results = [
         'name': '와인잔',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_wine.png',
         'description': '“아니, 집에 굳이 와인잔이 필요해?”라는 말은 말아주세요. 낭만이 없으면 시체인 와인잔에게는 분위기와 흥만큼 중요한 것이 없답니다.<br/><br/>사람을 만나는 것을 좋아하지만 외출을 귀찮아하는 와인잔은 친구들을 집으로 초대해 즐거운 홈파티를 여는 것을 선택하는 편이에요!<br/><br/>깨지기 쉬운 유리처럼 보이지만, 사실 -잔잔한 와인잔은 외부의 영향을 잘 받지 않는 외유내강형 룸미예요. 룸메이트의 생활 방식이 자신의 생활 패턴과 맞지 않아도 ‘그럴 수도 있지 뭐!’라고 생각하며 넘긴답니다.<br/><br/>하지만, 그렇게 말하지 않고 넘어가는 일이 많아질수록 점점 와인잔에 먼지가 쌓이기 시작할 거예요! 룸메이트와의 좋은 관계를 위해 지켜야 할 약속에 대해서는 분명하게 말하는 연습이 필요해요. 이것만 지킨다면, 룸메이트와의 멋진 와인 파티를 실컷 즐길 수 있을 거예요 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 12,
         'worst': 3
@@ -61,6 +66,7 @@ const results = [
         'name': '보드게임',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_game.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 13,
         'worst': 2,
@@ -72,6 +78,7 @@ const results = [
         'name': '베란다 화분',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_plant.png',
         'description': '햇빛을 좋아하는 베란다 화분은 친구들의 만나자는 연락을 애타게 기다리지만 막상 연락을 받으면 나갈까 말까 심각하게 고민을 하기 시작해요. 사람도 좋지만 그만큼 집이 너무 좋거든요.<br/><br/>집이 너무 좋아서 집을 열심히 가꿔요. 내가 매일 머무는 공간인만큼 청결을 중요하게 여긴답니다.<br/><br/>작은 성취에서 오는 소소한 기쁨을 즐겨요. 다들 “너 대체 집에서 뭐해?”라고 묻지만, 집에만 있으면 심심하지 않냐는 것은 천만의 말씀! 화분은 오늘도 홈트를 열심히 하며 포도알을 차곡차곡 채우고 있답니다.<br/><br/>가끔 하늘이 맑을 때 룸메이트와 함께 집 주변을 가볍게 걸어보는 것은 어떨까요? 옷을 꼭 갖춰입지 않아도 괜찮아요. 편한 옷을 입고 룸메이트와 함께 맛있는 군것질을 하는 시간을 보내다 보면 ‘내가 왜 나오는 걸 귀찮아했지?’라는 생각이 들 거예요! 물론 집에 돌아오자마자 역시 집이 최고라는 생각을 하겠지만요 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 14,
         'worst': 1
@@ -83,6 +90,7 @@ const results = [
         'name': '파자마',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_pajamas.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 15,
         'worst': 0
@@ -94,6 +102,7 @@ const results = [
         'name': '즉석밥',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_instantrice.png',
         'description': '누구에게나 자신만의 규칙과 신념이 있다. 즉석밥은 이 말에 깊이 공감해요.<br/><br/>다른 사람들은 즉석밥에게 ‘책상 위 좀 치워라’와 같은 잔소리를 늘어놓지만 즉석밥은 절대 아랑곳하지 않아요. 꼭 광이 나게 청소를 해야될 필요가 있나요? 가위가 어디있는지, 펜이 어디있는지 바로 찾을 수만 있으면 그걸로 충분하다고 생각하거든요.<br/><br/>사실 정말 챙겨야 할 것들은 모두 챙기면서 살아요. 친구들과도 자주 만나고, 잠도 꼬박 꼬박 자고, 밥 때가 되면 어떻게든 밥을 꼭 챙겨 먹어요. 생각보다 규칙적인 삶을 살고 있는데 왜 이렇게 다들 몰라주나 의아하다는 생각이 들어요.<br/><br/>본인의 생각에 대한 확신이 큰만큼 룸메이트와의 의견 충돌이 가끔 생길 수 있어요! 하지만 본인의 생각을 정확히 전달하고 룸메이트에게 받은 피드백은 확실하게 반영하는, 뒤끝 없는 쿨한 룸미랍니다 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 0,
         'worst': 15
@@ -105,6 +114,7 @@ const results = [
         'name': '블루투스 스피커',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_bluetooth.png',
         'description': '내적 관종! 블루투스 스피커를 한 단어로 표현하자면 딱 이 말이 맞아요.<br/><br/>사람을 만나러 나가는 것을 누구보다도 좋아하지만, 막상 나가면 군중 속의 외로움을 느끼곤 한답니다. 세상이 내게 관심을 가지지 말아줬으면 좋겠는데, 세상이 내게 주목해줬으면 좋겠어요! 아, 삶이란 정말 복잡하고도 쉽지 않아요.<br/><br/>그렇기 때문에 먼저 말을 건네지는 못하지만, 누가 말을 걸어줬을 때 기쁜 마음을 감추며 열심히 대답하곤 해요. 누구와도 무난하게 어울리는 블루투스 스피커는 마음이 맞는 사람을 만나면 3차, 4차까지 빼지 않고 달릴 정도로 에너자이저랍니다.<br/><br/>때로 너무 무던해서 청소에 신경을 잘 쓰지 못하는 탓에 함께 사는 룸메이트에게 혼쭐이 날 수도 있어요! 하지만 그때마다 피드백을 바로 수용하는 블루투스 스피커는 유쾌하고 귀여운 룸미랍니다 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 1,
         'worst': 14
@@ -117,6 +127,7 @@ const results = [
         'name': '무드등',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_moodlight.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 2,
         'worst': 13
@@ -128,6 +139,7 @@ const results = [
         'name': '텀블러',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_tumbler.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 3,
         'worst': 12
@@ -139,6 +151,7 @@ const results = [
         'name': '멀티탭',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_multi.png',
         'description': '멀티탭은 한 번 일을 시작하면 그 일에만 몰두해요. 평상시에는 말이 많은 수다쟁이인데, 가끔씩 보이는 진지한 모습에 반하는 사람이 많답니다.<br/><br/>체력 관리 하나는 정말 확실한 멀티탭은 밤을 새자고 호기롭게 외친 후 가장 먼저 잠에 드는 사람이에요. 놀 땐 빡세게 놀고, 잘 때 됐다 싶으면 어디서든 조용히 구석에서 잘 자고 있어요.<br/><br/>그냥 콘센트가 아닌 멀티탭인 이유는 친구들과의 약속은 절대 빼지 않는 사람이기 때문이에요. 한 번 놀 때는 제대로 노는 사람이기 때문에 여기저기서 부르는 친구들이 많답니다. 본가가 아닌 밖에서 생활할 때 잔뜩 자정 약속을 즐겨야 하지 않겠어요?<br/><br/>하지만, 룸메와 사이 좋게 지내기 위해서는 가끔 잠만 자는 집이라도 청결 상태에 신경쓰는 노력이 필요해요! 콘센트에 쌓인 먼지를 계속 방치해두면 불이 날 수도 있으니까요.',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 4,
         'worst': 11,
@@ -150,6 +163,7 @@ const results = [
         'name': '과잠',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_gwajam.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 3,
         'best': 5,
         'worst': 10
@@ -161,6 +175,7 @@ const results = [
         'name': '휴대용 손소독제',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_cleaner.png',
         'description': '놀 땐 놀고 할 땐 한다!<br/><br/>휴대용 손소독제의 인생 모토예요. 친구들과의 약속에는 절대 빠지는 법이 없는데, 가만 보면 놀면서 해야될 건 다 챙기는 똑쟁이랍니다. 친구들은 여유 속 각 잡힌 삶을 사는 손소독제를 보며 신기하다고 말하곤 해요.<br/><br/>완벽한 자기관리를 위해 칼취침을 하는 거라고 생각하고 있었는데, 점점 나이를 이길 수 없다는 생각이 자꾸 들어요. 10시만 넘어가면 눈커풀이 점점 무거워지는게 요즘 고민이에요. 요즘은 밥만 먹으면 시도 때도 없이 졸려요. 할 일이 산더미인데 큰일이에요.<br/><br/>기억력이 좋다보니 뒤끝이 길어요! 둔해지고 싶은데 자꾸 민감하게 반응하는 자신이 싫을 때가 있어요.<br/><br/>하지만 예민한 것이 무조건 나쁜 것은 아니잖아요~ 손소독제의 꼼꼼함과 세심함을 알아주는 룸메이트와 함께라면 즐거운 매일 매일을 보낼 수 있을 거예요 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 6,
         'worst': 9
@@ -172,6 +187,7 @@ const results = [
         'name': '보조배터리',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_battery.png',
         'description': '',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 5,
         'best': 7,
         'worst': 8
@@ -183,6 +199,7 @@ const results = [
         'name': '다음 기회에',
         'img': 'https://formytest.s3.ap-northeast-2.amazonaws.com/pic_cry.png',
         'description': '잠깐! 룸메이트의 음식은 꼭 허락을 받고 먹어주세요! 함께 사는 사이일수록 더욱 더 조심하고 지켜야 하는 부분이 있는 것이랍니다.<br/><br/>내 룸미 유형을 알고 싶다면, 먼저 룸메이트가 되기 위한 마음가짐을 정돈한 후에 다시 도전해봐요! 언제든 기다리고 있을게요.<br/><br/>내가 먼저 좋은 룸메이트가 되어준다면,<br/>나도 좋은 룸메이트를 만날 수 있을 거예요 :)',
+        'subdesc': '#해시태그#해시택#해쉬',
         'prob': 32,
         'best': 16,
         'worst': 16
