@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import kakao from '../assets/btn/btn_kakao.svg';
+import cry_for_kakao from '../assets/result/pic_cry_for_kakao.png';
 
 const { Kakao } = window;
 
@@ -17,7 +18,15 @@ const ShareBtn = styled.button`
 
 function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
-    let replaced_sub = _sub.replace('<br/>', ' ')
+    let replaced_sub = _sub.replace('<br/>', ' ');
+
+    let replaced_imageUrl = ''
+
+    if (_finalType === 16) {
+        replaced_imageUrl = cry_for_kakao;
+    } else {
+        replaced_imageUrl = _imageUrl;
+    }
 
     const onHandleShareKaKao = () => {
 
@@ -26,7 +35,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
             content: {
                 title: replaced_sub + ', \'' + _title + '\'',
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
-                imageUrl: _imageUrl,
+                imageUrl: replaced_imageUrl,
                 link: {
                     mobileWebUrl: 'http://localhost:3000/',
                 }

@@ -64,6 +64,7 @@ function DeveloperPage() {
                         developer={developers.name}
                         subDesc={developers.subDesc}
                         style={imgStyles}
+                        site={developers.site}
                         type={'dev'}
                     />
                 ))}
