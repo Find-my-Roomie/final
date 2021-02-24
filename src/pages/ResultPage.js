@@ -236,7 +236,7 @@ function ResultPage({ match }) {
                     <FlexLayout>
                         <ShareSquare>
                             <FlexLayout>
-                                <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} />
+                                <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} _finalType={finalType} />
                                 <CopyToClipboard text={link}>
                                     <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
                                 </CopyToClipboard>
