@@ -5,6 +5,7 @@ import Parser from 'html-react-parser';
 import CopyToClipboard from "react-copy-to-clipboard";
 
 import results from './contents/results';
+import WarningPage from './WarningPage';
 import ButtonComponent from '../components/SYBtnComponent';
 import KakaoShareBtn from '../components/Kakao';
 import LinkCopyBtn from '../assets/btn/btn_link.svg';
@@ -191,6 +192,8 @@ const BtnToPage = styled(NavLink)`
 `
 
 function ResultPage({ match }) {
+    window.scrollTo(0, 0);
+
     const link = window.location.href;
     const finalType = match.params.finalType;
 
@@ -241,8 +244,8 @@ function ResultPage({ match }) {
                                     <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
                                 </CopyToClipboard>
                             </FlexLayout>
-                            <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
-                            <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
+                            <BtnToPage exact to='/'><ButtonComponent type={'result-activated'} text={'테스트 다시 하기'} /></BtnToPage>
+                            <BtnToPage exact to='/all'><ButtonComponent type={'result-unactivated'} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
                         </ShareSquare>
                     </FlexLayout>
 
@@ -252,10 +255,8 @@ function ResultPage({ match }) {
         );
     } else {
         return (
-            <>
-                앗! 이 주소는 룸미가 살지 않는 방이에요!
-            </>
-        );
+            <WarningPage />
+        )
     }
 }
 

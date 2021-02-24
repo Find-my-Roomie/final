@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import AllResultPage from './pages/AllResultPage';
 import DeveloperPage from './pages/DeveloperPage';
 import ResultPage from './pages/ResultPage';
+import WarningPage from './pages/WarningPage';
 
 function App({ props }) {
 
@@ -28,7 +29,7 @@ function App({ props }) {
         path="/makers"
         render={props => <DeveloperPage props={props} />}
       ></Route>
-      <Route path="/*">앗! 이 주소는 룸미가 살지 않는 방이에요!</Route>
+      <Route path="/*"><WarningPage /></Route>
     </Switch >
   );
 

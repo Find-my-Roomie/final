@@ -37,7 +37,7 @@ const BtnToPage = styled(NavLink)`
 function DeveloperPage() {
 
     const imgStyles = {
-        margin: '0.7rem 1rem 0 1rem',
+        margin: '0 1rem 0 1rem',
     }
 
     window.scrollTo(0, 0);
@@ -51,7 +51,7 @@ function DeveloperPage() {
                 <Text>🏠</Text>
                 <Text display='inline-block' top='2.1rem' color='#00462A'>find my Roomie</Text>
                 <Text display='inline-block'>를 만든</Text>
-                <Text top='2.1rem' bottom='5.8rem'>제작자를 소개합니다</Text>
+                <Text top='1rem' bottom='5.8rem'>제작자를 소개합니다</Text>
             </Text>
             <Wrapper>
                 {developers.map((developers, i) => (
@@ -64,13 +64,14 @@ function DeveloperPage() {
                         developer={developers.name}
                         subDesc={developers.subDesc}
                         style={imgStyles}
+                        type={'dev'}
                     />
                 ))}
                 <Text top='27.4rem' fontSize='1.2rem'>Special thanks to...</Text>
                 <Text top='4.2rem' color='#00462A'>DCDMJY</Text>
                 <Text top='1.7rem' bottom='19.4rem' font='Spoqa-Han-Sans' fontWeight='400' fontSize='1.2rem'>기깔나는 그림 및 기똥찬 유형 이름 구상에 기여함</Text>
-                <BtnToPage exact to='/'><ButtonComponent type={true} text={'테스트 다시 하기'} /></BtnToPage>
-                <BtnToPage exact to='/all'><ButtonComponent type={false} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
+                <BtnToPage exact to='/'><ButtonComponent type={'others-activated'} text={'테스트 다시 하기'} /></BtnToPage>
+                <BtnToPage exact to='/all'><ButtonComponent type={'others-unactivated'} text={'다른 룸메이트 유형 구경하기'} /></BtnToPage>
             </Wrapper>
         </>
     );
