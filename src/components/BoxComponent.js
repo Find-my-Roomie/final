@@ -14,6 +14,7 @@ const Wrapper = styled.div`
     display:flex;
     align-items:center;
     margin-left:1rem;
+    margin-top:${props => props.type === 'dev' ? '0.6rem' : ''};
 `
 
 const Img = styled.div`
@@ -56,10 +57,10 @@ const SubDesc = styled.div`
 `
 
 
-function BoxComponent({ src, style, title, color, name, developer, subDesc }) {
+function BoxComponent({ src, style, title, color, name, developer, subDesc, type }) {
     return (
         <Container>
-            <Wrapper>
+            <Wrapper type={type}>
                 <Img><img src={src} style={style} /></Img>
                 <TextWrapper>
                     <Desc>{title}</Desc>

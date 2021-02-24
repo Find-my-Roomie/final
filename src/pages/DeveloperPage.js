@@ -37,7 +37,7 @@ const BtnToPage = styled(NavLink)`
 function DeveloperPage() {
 
     const imgStyles = {
-        margin: '0.7rem 1rem 0 1rem',
+        margin: '0 1rem 0 1rem',
     }
 
     window.scrollTo(0, 0);
@@ -51,7 +51,7 @@ function DeveloperPage() {
                 <Text>🏠</Text>
                 <Text display='inline-block' top='2.1rem' color='#00462A'>find my Roomie</Text>
                 <Text display='inline-block'>를 만든</Text>
-                <Text top='2.1rem' bottom='5.8rem'>제작자를 소개합니다</Text>
+                <Text top='1rem' bottom='5.8rem'>제작자를 소개합니다</Text>
             </Text>
             <Wrapper>
                 {developers.map((developers, i) => (
@@ -64,6 +64,7 @@ function DeveloperPage() {
                         developer={developers.name}
                         subDesc={developers.subDesc}
                         style={imgStyles}
+                        type={'dev'}
                     />
                 ))}
                 <Text top='27.4rem' fontSize='1.2rem'>Special thanks to...</Text>
