@@ -55,11 +55,6 @@ const Text = styled.div`
     margin-bottom:8.4rem; 
 `
 
-const LinkStyle = styled.div`
-    text-decoration:none;
-    color:white;
-`
-
 const Logo = styled.img`
     width: 1.2rem;
 `
@@ -111,7 +106,7 @@ function QuizPage({ isShow }) {
                 if (typeThree >= 5) {
                     result = result + 2;
                 }
-                if (typeFour+record >= 5) {
+                if (typeFour + record >= 5) {
                     result = result + 1;
                 }
                 else {
@@ -133,7 +128,7 @@ function QuizPage({ isShow }) {
         setTurn(turn + 1);
 
     }
- 
+
 
     const onClickResultBtn = () => {
         setIsProcess(false);

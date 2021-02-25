@@ -73,6 +73,7 @@ const ResultSquare = styled.div`
         bottom:2.6rem;
         margin-left:3.2rem;
         margin-right:3.2rem;
+        margin-bottom:2rem;
     }
 `
 
@@ -191,6 +192,9 @@ const BtnToPage = styled(NavLink)`
     color:${props => props.theme.dark};
 `
 
+const Img = styled.img`
+`
+
 function ResultPage({ match }) {
     window.scrollTo(0, 0);
 
@@ -241,7 +245,7 @@ function ResultPage({ match }) {
                             <FlexLayout>
                                 <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} _finalType={finalType} />
                                 <CopyToClipboard text={link}>
-                                    <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
+                                    <Button onClick={alertMessage}><Img src={LinkCopyBtn} /></Button>
                                 </CopyToClipboard>
                             </FlexLayout>
                             <BtnToPage exact to='/'><ButtonComponent type={'result-activated'} text={'테스트 다시 하기'} /></BtnToPage>

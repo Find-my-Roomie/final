@@ -70,6 +70,9 @@ const SubDesc = styled.div`
     font-size: 1.2rem;
 `
 
+const ImgTag = styled.img`
+`
+
 
 function BoxComponent({ src, style, title, color, name, developer, subDesc, type, site }) {
 
@@ -80,7 +83,7 @@ function BoxComponent({ src, style, title, color, name, developer, subDesc, type
     return (
         <Container>
             <Wrapper type={type}>
-                <Img><img src={src} style={style} /></Img>
+                <Img><ImgTag src={src} style={style} /></Img>
                 <TextWrapper>
                     <Desc>{title}</Desc>
                     <Toc color={color}>{name}</Toc>

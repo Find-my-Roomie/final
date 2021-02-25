@@ -16,6 +16,9 @@ const ShareBtn = styled.button`
   margin-bottom: 1.6rem;
 `;
 
+const Img = styled.img`
+`
+
 function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     let replaced_sub = _sub.replace('<br/>', ' ');
@@ -37,20 +40,23 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
                 imageUrl: replaced_imageUrl,
                 link: {
-                    mobileWebUrl: 'http://localhost:3000/',
+                    webUrl: 'https://find-my-roomie.vercel.app/',
+                    mobileWebUrl: 'https://find-my-roomie.vercel.app/',
                 }
             },
             buttons: [
                 {
                     title: '결과 보기',
                     link: {
-                        mobileWebUrl: 'http://localhost:3000/result/' + _finalType,
+                        webUrl: 'https://find-my-roomie.vercel.app/result/' + _finalType,
+                        mobileWebUrl: 'https://find-my-roomie.vercel.app/result/' + _finalType,
                     }
                 },
                 {
                     title: '테스트하기',
                     link: {
-                        mobileWebUrl: 'http://localhost:3000/',
+                        webUrl: 'https://find-my-roomie.vercel.app/',
+                        mobileWebUrl: 'https://find-my-roomie.vercel.app/',
                     }
                 }
             ]
@@ -59,7 +65,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     return (
         <ShareBtn value="KaKao" onClick={onHandleShareKaKao} >
-            <img src={kakao} />
+            <Img src={kakao} />
         </ShareBtn>
     );
 }

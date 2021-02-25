@@ -28,11 +28,11 @@ const Button = styled.div`
     text-align:center;
     border:${props => props.type === 'result' ? '3px solid #00462A' : '3px solid lightgray'};
 
-    :hover{
+    /* :hover{
         background-color: ${props => '#00462A'};
         border:3px solid #00462A;
         color:white;
-    }
+    } */
 
 `
 
