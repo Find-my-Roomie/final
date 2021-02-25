@@ -38,6 +38,7 @@ function DeveloperPage() {
 
     const imgStyles = {
         margin: '0 1rem 0 1rem',
+        width: '10.3rem'
     }
 
     window.scrollTo(0, 0);
