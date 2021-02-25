@@ -19,7 +19,7 @@ const developers = [
         src: kahyun,
         name: ' 박가현',
         subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/rkgus._.pk'
+        site: 'https://instagram.com/rkgus.__.pk'
     },
     {
         title: '베드테이블 살까 고민중인<br/>방구석 파티쟁이',
