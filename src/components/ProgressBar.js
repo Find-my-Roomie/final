@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const ProgressBar = (props) => {
   const { completed } = props;
@@ -21,8 +20,6 @@ const ProgressBar = (props) => {
     borderRadius: '20px',
     transition: '1s ease 0.005s'
   }
-
-
 
 
   return (

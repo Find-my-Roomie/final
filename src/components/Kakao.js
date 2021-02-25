@@ -16,6 +16,9 @@ const ShareBtn = styled.button`
   margin-bottom: 1.6rem;
 `;
 
+const Img = styled.img`
+`
+
 function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     let replaced_sub = _sub.replace('<br/>', ' ');
@@ -59,7 +62,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     return (
         <ShareBtn value="KaKao" onClick={onHandleShareKaKao} >
-            <img src={kakao}></img>
+            <Img src={kakao} />
         </ShareBtn>
     );
 }
