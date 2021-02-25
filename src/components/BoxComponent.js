@@ -80,7 +80,7 @@ function BoxComponent({ src, style, title, color, name, developer, subDesc, type
     return (
         <Container>
             <Wrapper type={type}>
-                <Img><img src={src} style={style} /></Img>
+                <Img><img src={src} style={style}></img></Img>
                 <TextWrapper>
                     <Desc>{title}</Desc>
                     <Toc color={color}>{name}</Toc>

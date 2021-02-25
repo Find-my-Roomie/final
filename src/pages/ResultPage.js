@@ -241,7 +241,7 @@ function ResultPage({ match }) {
                             <FlexLayout>
                                 <KakaoShareBtn _sub={results[finalType].title} _title={results[finalType].name} _imageUrl={results[finalType].img} _finalType={finalType} />
                                 <CopyToClipboard text={link}>
-                                    <Button onClick={alertMessage}><img src={LinkCopyBtn} /></Button>
+                                    <Button onClick={alertMessage}><img src={LinkCopyBtn}></img></Button>
                                 </CopyToClipboard>
                             </FlexLayout>
                             <BtnToPage exact to='/'><ButtonComponent type={'result-activated'} text={'테스트 다시 하기'} /></BtnToPage>

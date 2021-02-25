@@ -1,8 +1,8 @@
-import ewhasymbol from '../assets/common/ewhasymbol.png';
+import React from 'react';
+import styled from 'styled-components';
 
 const ProgressBar = (props) => {
   const { completed } = props;
-  const { rotation } = props;
 
   const containerStyles = {
     height: '1.0rem',

@@ -59,7 +59,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
 
     return (
         <ShareBtn value="KaKao" onClick={onHandleShareKaKao} >
-            <img src={kakao} />
+            <img src={kakao}></img>
         </ShareBtn>
     );
 }
