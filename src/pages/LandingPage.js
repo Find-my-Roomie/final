@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import StartButtonComponent from '../components/StartButtonComponent';
 import QuizPage from './QuizPage';
-import Ewha from '../assets/ewhasymbol.png';
+import Ewha from '../assets/common/ewhasymbol.png';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};

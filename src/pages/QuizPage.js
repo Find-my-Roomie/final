@@ -5,7 +5,7 @@ import contents from './contents/questions';
 import ProgressBar from '../components/ProgressBar';
 import Parser from 'html-react-parser';
 import { Link, Redirect } from 'react-router-dom'
-import Ewha from '../assets/ewhasymbol.png';
+import Ewha from '../assets/common/ewhasymbol.png';
 
 const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
