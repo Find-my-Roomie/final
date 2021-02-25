@@ -8,25 +8,29 @@ const Button = styled.div`
     height: 7rem;
 
     border-radius: 1.5rem;
-    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: ${props => props.type === true ? '#00462A' : props.theme.white};
+    background-color: ${props =>
+        props.type === true ? '#00462A'
+            : props.type === 'result' ? '#00462A'
+                : props.theme.white};
     cursor:pointer;
     margin : 1.5rem;
     display: inline-flex;
 
-    color:black;
+    color:${props =>
+        props.type === 'result' ? 'white'
+            : 'black'};
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Spoqa-Han-Sans';
+    font-family:${props => props.type === 'result' ? 'Jalnan' : 'Spoqa-Han-Sans'};
     font-weight: 400;
     font-size:1.5rem;
     text-align:center;
-    border:3px solid lightgray;
+    border:${props => props.type === 'result' ? '3px solid #00462A' : '3px solid lightgray'};
 
     :hover{
         background-color: ${props => '#00462A'};
-        border:none;
+        border:3px solid #00462A;
         color:white;
     }
 
