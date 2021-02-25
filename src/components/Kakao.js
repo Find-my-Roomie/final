@@ -40,6 +40,7 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
                 description: 'find my Roomie!\n나는 어떤 유형의 룸메이트일까?',
                 imageUrl: replaced_imageUrl,
                 link: {
+                    WebUrl: 'https://find-my-roomie.vercel.app/',
                     mobileWebUrl: 'https://find-my-roomie.vercel.app/',
                 }
             },
@@ -47,12 +48,14 @@ function KaKao({ _title, _sub, _imageUrl, _finalType }) {
                 {
                     title: '결과 보기',
                     link: {
+                        WebUrl: 'https://find-my-roomie.vercel.app/result/' + _finalType,
                         mobileWebUrl: 'https://find-my-roomie.vercel.app/result/' + _finalType,
                     }
                 },
                 {
                     title: '테스트하기',
                     link: {
+                        WebUrl: 'https://find-my-roomie.vercel.app/',
                         mobileWebUrl: 'https://find-my-roomie.vercel.app/',
                     }
                 }
