@@ -10,16 +10,16 @@ const developers = [
         src: mihye,
         name: ' 나미혜',
         subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/인스타아이디'
+        site: 'https://instagram.com/miii_y00'
     },
     {
-        title: '방 안에서 자주 하는 행동',
+        title: '제목은 오늘의집 V.I.P 로 하겠습니다<br/>근데 이제 외향성을 곁들인 ..',
         type: '과잠',
         color: '#B13B3B',
         src: kahyun,
         name: ' 박가현',
         subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/인스타아이디'
+        site: 'https://instagram.com/rkgus._.pk'
     },
     {
         title: '베드테이블 살까 고민중인<br/>방구석 파티쟁이',
