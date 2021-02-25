@@ -3,12 +3,19 @@
 > 나와 잘 맞는 룸메이트 유형과 피하면 좋은 룸메이트 유형을 알려드려요. <br/>
 > (본 프로젝트는 DSC EWHA 2기 React3 팀의 프로젝트입니다.)
 
-[테스트 하러 가기](http://naver.oom)
+[테스트 하러 가기](http://)
 
 <br/>
 
 ## ✨ 기능
 #### * 테스트 페이지
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109104538-81577600-776f-11eb-9590-de5ea3a73b5c.PNG" width="400"> <img src="https://user-images.githubusercontent.com/55133871/109104543-84526680-776f-11eb-8d28-97f63a79c183.PNG" width="400">
+</p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109104551-874d5700-776f-11eb-809b-db1f40cd19dd.png" width="400"> <img src="https://user-images.githubusercontent.com/55133871/109104557-89171a80-776f-11eb-871e-29e0feac42e3.PNG" width="400">
+</p>
+
 1. 테스트하기 버튼을 통해 테스트를 시작합니다.
 2. 문제에 따라 여러 선택지 중 하나를 선택할 수 있으며, 문제 번호에 맞게 프로그레스바가 채워집니다.
 3. 일정 개수의 문제를 맞출 경우 로딩 화면으로 넘어가며, 결과 확인 버튼을 누르면 결과 화면으로 이동합니다.
@@ -16,6 +23,10 @@
 <br/>
 
 #### * 결과 페이지
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109104733-e0b58600-776f-11eb-988e-81f485bf5a2f.PNG" width="400"> <img src="https://user-images.githubusercontent.com/55133871/109104727-deebc280-776f-11eb-9aa9-78cd6a6de732.PNG" width="400">
+</p>
+
 1. 선택지에 따라 결정된 본인의 유형 및 설명을 확인할 수 있습니다.
 2. 본인과 잘 맞는 유형과 잘 맞지 않는 유형을 확인할 수 있습니다.
 3. 결과를 카카오톡으로 공유하거나, 링크 복사할 수 있습니다.
@@ -25,6 +36,10 @@
 <br/>
 
 #### * 모든 유형 확인 페이지
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109104899-3853f180-7770-11eb-96c7-f2ee532e29ea.PNG" width="400"> <img src="https://user-images.githubusercontent.com/55133871/109104901-39851e80-7770-11eb-9712-ed76cc3a1a72.PNG" width="400">
+</p>
+
 1. 모든 유형을 한번에 확인할 수 있습니다.
 2. 테스트 첫 화면으로 돌아가거나, 개발자 소개 페이지로 이동할 수 있습니다.
 
@@ -39,12 +54,20 @@
 <br/>
 
 #### * 개발자 소개 페이지
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109104978-60435500-7770-11eb-9146-4108381903ba.PNG" width="400">
+</p>
+
 1. 개발자에 대한 소개를 확인할 수 있으며, 더 알아보기를 클릭 시 각 개발자의 SNS로 연결됩니다.
 2. 테스트 첫 화면으로 돌아가거나, 모든 유형에 대해 살펴보는 페이지로 이동할 수 있습니다.
 
 <br/>
 
 #### * 404 NOT FOUND
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55133871/109105099-95e83e00-7770-11eb-8312-4fb8dcac885b.PNG" width="400">
+</p>
+
 1. 없는 페이지임을 알려주는 문구를 확인 후 테스트 첫 화면으로 돌아갈 수 있습니다.
 
 <br/>
