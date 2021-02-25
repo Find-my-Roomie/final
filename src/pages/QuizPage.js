@@ -1,54 +1,76 @@
-import React, { useEffect, useState, setState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ButtonComponent from '../components/ButtonComponent';
 import contents from './contents/questions';
 import ProgressBar from '../components/ProgressBar';
 import Parser from 'html-react-parser';
+import { Link, Redirect } from 'react-router-dom'
+import Ewha from '../assets/ewhasymbol.png';
 
-const Container = styled.div`
-&,
-& * {
-  box-sizing: border-box;
-}
+const Wrapper = styled.div`
     display: ${props => props.isShow === true ? 'flex' : 'none'};
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#C9DECF;
-
-    padding: 10rem;
- 
-`
-const Box = styled.div`
-    display: ${props => props.isShow === true ? 'flex' : 'none'};
-    margin-top:2rem;
-    margin-bottom:2rem;
-    height:600px;
-    background-color: white;
-    border-radius: 2rem;
-    width: 400px;
-    margin:0 auto;
+    width:100%;
+    height:100vh;
+    background-color:white;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
-    border: 4px double #FF9999;
+    justify-content:center;
+`
+const Container = styled.div`
+    margin-bottom:3rem;
     text-align:center;
-    padding:10px;
+    align-items:center;
+`
+const Title = styled.div`
+    font-family:'Jalnan';
+    font-size:2.5rem;
+    text-align:center;
+    color:#00462A;
+    margin-top:1.9rem;
+    margin-bottom:8.4rem;
+`
+const Footer = styled.div`
+    font-family:'Spoqa-Han-Sans';
+    font-size:1.4rem;
+    font-weight:400;
+    text-align:center;
+    margin-top:8.9rem;
+    color:#A7A7A7;
+`
+const Msg = styled.div`
+    font-family:'Spoqa-Han-Sans';
+    font-size:1.4rem;
+    font-weight:400;
+    text-align:center;
+    color:#A7A7A7;
+`
+const Text = styled.div`
+    font-family:'Jalnan';
+    font-size:1.9rem;
+    font-weight: light;
+    margin:0.5rem;
+    text-align:center;
+    color:black;
+    margin-top:3.9rem;
+    margin-bottom:8.4rem; 
 `
 
-const Text = styled.div`
-    font-family:'Spoqa-Han-Sans';
-    font-weight:700;
-    font-size:2rem;
-    margin-bottom: 6.5rem;
-    align-items:center;    
+const LinkStyle = styled.div`
+    text-decoration:none;
+    color:white;
+`
+
+const Logo = styled.img`
+    width: 1.2rem;
 `
 
 function QuizPage({ isShow }) {
+
     const [questionNum, setQuestionNum] = useState(0);
     const [isProcess, setIsProcess] = useState(false);
-    const [isResultShow, setIsResultShow] = useState(false);
-
+    const [isLoading, setIsLoading] = useState(false);
+    const [linkTo, setLinkTo] = useState("");
+    const linkResult = "/result/";
     const [typeOne, setTypeOne] = useState(0);
     const [typeTwo, setTypeTwo] = useState(0);
     const [typeThree, setTypeThree] = useState(0);
@@ -61,8 +83,13 @@ function QuizPage({ isShow }) {
 
         let record = contents[questionNum].weight * contents[questionNum].answers[key].score; //dhld
         if (questionNum === 3 && key === 2) {
-            setIsProcess(true);
-            setFinalType(16);
+            setIsLoading(true);
+            let num = 16;
+            setFinalType(num);
+            setLinkTo(linkResult + num);
+            setTimeout(function () {
+                setIsLoading(false);
+            }, 3000);
         }
         else if (questionNum === 0 || questionNum === 1) {
             setTypeOne(typeOne + record);
@@ -70,12 +97,16 @@ function QuizPage({ isShow }) {
             setTypeTwo(typeTwo + record);
         } else if (questionNum === 5 || questionNum === 6 || questionNum === 7) {
             setTypeThree(typeThree + record);
-        } else if (questionNum === 8 || questionNum === 9) {
+        } else if (questionNum >= 8) {
             setTypeFour(typeFour + record);
             if (questionNum === 9) {
                 findResult();
-                setQuestionNum(0);
-                setIsProcess(true);
+                setIsLoading(true);
+                setTimeout(function () {
+                    setIsLoading(false);
+                    setIsProcess(true);
+                }, 2000);
+
             }
         }
         setQuestionNum(questionNum + 1);
@@ -86,44 +117,62 @@ function QuizPage({ isShow }) {
         var result = 0;
 
         if (typeOne >= 5) {
-            result = result + 1
+            result = result + 8;
         }
         if (typeTwo >= 5) {
-            result = result + 2
+            result = result + 4;
         }
         if (typeThree >= 5) {
-            result = result + 4
+            result = result + 2;
         }
         if (typeFour >= 5) {
-            result = result + 8
+            result = result + 1;
         }
-        setFinalType(result);
+        else {
+            result = result + 0;
+        }
+
+        let num = result;
+        setFinalType(num);
+        setLinkTo(linkResult + num);
     };
 
     const onClickResultBtn = () => {
         setIsProcess(false);
-        setIsResultShow(true);
         setQuestionNum(16);
     }
 
-    if (questionNum === 10 || isProcess) {
+    if (questionNum === 10) {
         return (
             <>
-                <Container isShow={isProcess}>
-                    <Box isShow={isProcess}>
+                <Wrapper isShow={isLoading}>
+                    <Title>find my Roomie</Title>
+                    <Msg>당신의 Roomie를 찾고 있어요 .. </Msg>
+                    <Footer>made by DSC EWHA &nbsp;<Logo src={Ewha} /></Footer>
+                </Wrapper>
+                <Wrapper isShow={isProcess}>
+                    <Container>
                         <Text>테스트 완료! </Text>
-                        <ButtonComponent text="결과 확인하기🐾" onclick={onClickResultBtn}></ButtonComponent>
-                        <Text>{finalType}</Text>
-                    </Box>
-                </Container>
-
+                        <Link to={linkTo} style={{ textDecoration: 'none' }}>
+                            <ButtonComponent type={'result'} text="결과 확인하기🐾" onclick={onClickResultBtn}></ButtonComponent>
+                        </Link>
+                    </Container>
+                </Wrapper>
             </>);
-    } else if (questionNum < 10) {
+    } else if (finalType === 16) {
+        return (
+            <div>
+                <Redirect to={linkTo}></Redirect>
+            </div>
+        )
+    }
+    else if (questionNum < 10 && finalType !== 16) {
         return (
             <>
-                <Container isShow={isShow}>
-                    <Box isShow={isShow}>
-                        <ProgressBar completed={(questionNum + 1) * 10} rotation={turn} />
+                <Wrapper isShow={isShow}>
+                    <ProgressBar completed={(questionNum + 1) * 10} rotation={turn} />
+
+                    <Container>
                         <Text>{Parser(contents[questionNum].question)} </Text>
                         {contents[questionNum].answers.map((answer, i) => (
                             <ButtonComponent
@@ -133,10 +182,10 @@ function QuizPage({ isShow }) {
                                 onclick={onConditionChange}
                             />
                         ))}
-                    </Box>
-                </Container>
-            </>
-        );
+
+                    </Container>
+                </Wrapper>
+            </>);
     }
 }
 

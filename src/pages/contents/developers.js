@@ -9,7 +9,8 @@ const developers = [
         color: ' #424E8E',
         src: mihye,
         name: ' 나미혜',
-        subDesc: '인스타 아이디'
+        subDesc: '더 궁금하다면? 클릭해보세요!',
+        site: 'https://instagram.com/인스타아이디'
     },
     {
         title: '방 안에서 자주 하는 행동',
@@ -17,7 +18,8 @@ const developers = [
         color: '#B13B3B',
         src: kahyun,
         name: ' 박가현',
-        subDesc: '인스타 아이디'
+        subDesc: '더 궁금하다면? 클릭해보세요!',
+        site: 'https://instagram.com/인스타아이디'
     },
     {
         title: '베드테이블 살까 고민중인<br/>방구석 파티쟁이',
@@ -25,7 +27,8 @@ const developers = [
         color: '#B567B1',
         src: sayyoung,
         name: ' 장세영',
-        subDesc: 'https://say-young.tistory.com'
+        subDesc: '더 궁금하다면? 클릭해보세요!',
+        site: 'https://say-young.tistory.com'
     }
 ]
 

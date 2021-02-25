@@ -47,17 +47,36 @@ const Toc = styled.div`
     color: ${props => props.color || 'black'};
 `
 
-const SubDesc = styled.div`
+const Button = styled.button`
+    background-color:white;
+    border:none;
+    outline:none;
+    text-align:left;
+
+    width:100%;
+    padding:0;
     margin-top:1.2rem;
-    font-family: 'Spoqa-Han-Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.2rem;
+    cursor:${props => props.type === 'dev' ? 'pointer' : ''};
+
     color: #A7A7A7;
+    &:hover{
+        color : ${props => props.type === 'dev' ? '#1F1F1F' : ''};
+    }
+`
+
+const SubDesc = styled.div`
+    font-family: 'Spoqa-Han-Sans';
+    font-weight: 400;
+    font-size: 1.2rem;
 `
 
 
-function BoxComponent({ src, style, title, color, name, developer, subDesc, type }) {
+function BoxComponent({ src, style, title, color, name, developer, subDesc, type, site }) {
+
+    const goToSite = () => {
+        (type === 'dev') && site && window.open(site);
+    }
+
     return (
         <Container>
             <Wrapper type={type}>
@@ -66,7 +85,7 @@ function BoxComponent({ src, style, title, color, name, developer, subDesc, type
                     <Desc>{title}</Desc>
                     <Toc color={color}>{name}</Toc>
                     <Toc>{developer}</Toc>
-                    <SubDesc>{subDesc}</SubDesc>
+                    <Button type={type} onClick={goToSite}><SubDesc>{subDesc}</SubDesc></Button>
                 </TextWrapper>
             </Wrapper>
         </Container>
