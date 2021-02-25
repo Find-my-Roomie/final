@@ -73,6 +73,7 @@ const ResultSquare = styled.div`
         bottom:2.6rem;
         margin-left:3.2rem;
         margin-right:3.2rem;
+        margin-bottom:2rem;
     }
 `
 
