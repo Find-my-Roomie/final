@@ -100,7 +100,27 @@ function QuizPage({ isShow }) {
         } else if (questionNum >= 8) {
             setTypeFour(typeFour + record);
             if (questionNum === 9) {
-                findResult();
+                var result = 0;
+
+                if (typeOne >= 5) {
+                    result = result + 8;
+                }
+                if (typeTwo >= 5) {
+                    result = result + 4;
+                }
+                if (typeThree >= 5) {
+                    result = result + 2;
+                }
+                if (typeFour+record >= 5) {
+                    result = result + 1;
+                }
+                else {
+                    result = result + 0;
+                }
+                let num = result;
+                setFinalType(num);
+                setLinkTo(linkResult + num);
+
                 setIsLoading(true);
                 setTimeout(function () {
                     setIsLoading(false);
@@ -113,29 +133,7 @@ function QuizPage({ isShow }) {
         setTurn(turn + 1);
 
     }
-    const findResult = () => {
-        var result = 0;
-
-        if (typeOne >= 5) {
-            result = result + 8;
-        }
-        if (typeTwo >= 5) {
-            result = result + 4;
-        }
-        if (typeThree >= 5) {
-            result = result + 2;
-        }
-        if (typeFour >= 5) {
-            result = result + 1;
-        }
-        else {
-            result = result + 0;
-        }
-
-        let num = result;
-        setFinalType(num);
-        setLinkTo(linkResult + num);
-    };
+ 
 
     const onClickResultBtn = () => {
         setIsProcess(false);
