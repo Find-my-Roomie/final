@@ -3,7 +3,7 @@
 > 나와 잘 맞는 룸메이트 유형과 피하면 좋은 룸메이트 유형을 알려드려요. <br/>
 > (본 프로젝트는 DSC EWHA 2기 React3 팀의 프로젝트입니다.)
 
-[테스트 하러 가기](http://)
+[테스트 하러 가기](https://find-my-roomie.vercel.app/)
 
 <br/>
 
