@@ -6,7 +6,7 @@ const Button = styled.div`
         props.type === 'result-activated' ? '28.8rem'
             : props.type === 'result-unactivated' ? '28.2rem'
                 : props.type === 'others-activated' ? '32.7rem'
-                    : '32.7rem'
+                    : '32.15rem'
     };
     
     height: ${props =>
