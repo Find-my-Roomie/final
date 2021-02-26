@@ -10,7 +10,7 @@ const developers = [
         src: mihye,
         name: ' 나미혜',
         subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/miii_y00'
+        site: 'https://dev-ming.tistory.com'
     },
     {
         title: '제목은 오늘의집 V.I.P 로 하겠습니다<br/>근데 이제 외향성을 곁들인 ..',
