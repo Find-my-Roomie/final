@@ -9,8 +9,8 @@ const developers = [
         color: ' #424E8E',
         src: mihye,
         name: ' 나미혜',
-        subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/miii_y00'
+        subDesc: '개발자 미혜가 궁금하다면? 클릭!',
+        site: 'https://dev-ming.tistory.com'
     },
     {
         title: '제목은 오늘의집 V.I.P 로 하겠습니다<br/>근데 이제 외향성을 곁들인 ..',
@@ -18,8 +18,8 @@ const developers = [
         color: '#B13B3B',
         src: kahyun,
         name: ' 박가현',
-        subDesc: '더 궁금하다면? 클릭해보세요!',
-        site: 'https://instagram.com/rkgus.__.pk'
+        subDesc: '개발자 가현이 궁금하다면? 클릭!',
+        site: 'https://kagus2.tistory.com/'
     },
     {
         title: '베드테이블 살까 고민중인<br/>방구석 파티쟁이',
@@ -27,7 +27,7 @@ const developers = [
         color: '#B567B1',
         src: sayyoung,
         name: ' 장세영',
-        subDesc: '더 궁금하다면? 클릭해보세요!',
+        subDesc: '개발자 세영이 궁금하다면? 클릭!',
         site: 'https://say-young.tistory.com'
     }
 ]
