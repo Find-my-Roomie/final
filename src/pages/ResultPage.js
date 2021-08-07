@@ -59,21 +59,28 @@ const ResultSquare = styled.div`
     margin:2.2rem;
 
     width: 33.1rem;
-    height:${props => props.isNormal < 16 ? '51.5rem' : '22.9rem'};
+    height:${props => props.isNormal < 16 ? '50rem' : '22.9rem'};
     background-color:white;
     border-radius: 0.5rem;
 
     ${ResultImg}{
         justify-content:center;
-        bottom:${props => props.isNormal < 16 ? '34rem' : '14rem'};
+        bottom:${props => props.isNormal < 16 ? '32rem' : '14rem'};
         left: -1.6rem;
     }
 
     ${Content}{
-        bottom:2.6rem;
-        margin-left:3.2rem;
-        margin-right:3.2rem;
-        margin-bottom:2rem;
+        width: 85%;
+        left: 50%;
+        word-break: keep-all;
+
+        ${props => props.isNormal < 16 ?
+        `transform: translateX(-50%);
+        bottom : 2rem;`
+        :
+        `top: 50%;
+        transform: translate(-50%, -50%);`
+        };
     }
 `
 
